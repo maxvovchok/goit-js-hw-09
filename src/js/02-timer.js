@@ -26,7 +26,7 @@ const options = {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
       buttonPressed.disabled = false;
-
+      inputDate.disabled = true;
       buttonPressed.addEventListener('click', () => {
         buttonPressed.disabled = true;
 
@@ -47,6 +47,7 @@ const options = {
             convertMs(timeLeft).seconds === 0
           ) {
             clearInterval(interval);
+            inputDate.disabled = false;
           }
         }, 1000);
       });
