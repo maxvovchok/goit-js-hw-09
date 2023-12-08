@@ -11,13 +11,14 @@ const days = document.querySelector('[data-days]');
 const hours = document.querySelector('[data-hours]');
 const minutes = document.querySelector('[data-minutes]');
 const seconds = document.querySelector('[data-seconds]');
-buttonPressed.disabled = true;
+// buttonPressed.disabled = true;
 
 const options = {
   enableTime: true,
   time_24hr: true,
-  defaultDate: new Date(),
+  defaultDate: new Date(2023, 11, 21, 21),
   minuteIncrement: 1,
+
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
     const currentDate = new Date();
@@ -25,7 +26,7 @@ const options = {
     if (selectedDate < currentDate) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
-      buttonPressed.disabled = false;
+      // buttonPressed.disabled = false;
       inputDate.disabled = true;
       buttonPressed.addEventListener('click', () => {
         buttonPressed.disabled = true;
